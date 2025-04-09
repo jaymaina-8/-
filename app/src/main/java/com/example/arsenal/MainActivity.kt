@@ -18,9 +18,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             //Greeting()
-
-           Register()
-
+            //Login()
+         // Register()
+            //dashboard()
+            AddStudent()
         }
         }
     }
@@ -39,8 +40,9 @@ fun Greeting() {
 fun GreetingPreview() {
     ARSENALTheme {
       // Greeting()
-
-        Register()
-
+       // Login()
+       // Register()
+       // dashboard()
+        AddStudent()
     }
 }

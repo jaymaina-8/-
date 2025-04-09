@@ -32,11 +32,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.arsenal.R
 import com.example.arsenal.ui.theme.ARSENALTheme
 
 @Composable
-fun Login() {
+fun Login(navController: NavController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var isLoading by remember { mutableStateOf(false) }
@@ -59,6 +60,7 @@ fun Login() {
             painter = painterResource(id = R.drawable.jay),
             contentDescription = "App Logo",
             modifier = Modifier.size(120.dp)
+
         )
 
         Text(
@@ -105,7 +107,7 @@ fun Login() {
             CircularProgressIndicator(color = primaryBlue)
         } else {
             Button(
-                onClick = {
+                onClick = {navController.navigate("dashboard")
                     if (email.isNotBlank() && password.isNotBlank() && isValidEmail(email)) {
                         isLoading = true
                         // Simulate backend login process
@@ -146,6 +148,6 @@ fun isValidEmail(email: String): Boolean {
 @Composable
 fun LoginPagePreview() {
     ARSENALTheme {
-        Login()
+        //Login()
     }
 }

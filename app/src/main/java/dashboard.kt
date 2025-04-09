@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Book
+
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -28,10 +28,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.arsenal.ui.theme.ARSENALTheme
 
 @Composable
-fun dashboard() {
+fun dashboard(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -56,10 +57,10 @@ fun dashboard() {
         DashboardCard(
             title = "Exams",
             description = "View and manage exams",
-            icon = Icons.Default.Book, // Correctly using Icons.Default.Book
+            icon = Icons.Default.Person, // Correctly using Icons.Default.Book
             backgroundColor = Color(0xFF81C784), // Light Green
             onClick = {
-                println("Exams card clicked")
+                println(navController.navigate("Addstudent"))
             }
         )
         DashboardCard(
@@ -130,6 +131,6 @@ fun DashboardCard(
 @Composable
 fun dashboardPreview() {
     ARSENALTheme {
-        dashboard()
+       // dashboard()
     }
 }
