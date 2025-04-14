@@ -5,7 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.arsenal.dashboard
+import com.example.arsenal.Dashboard
 import androidx.navigation.NavController
 import com.example.arsenal.AddStudent
 import com.example.arsenal.Login
@@ -20,7 +20,7 @@ fun AppNavigation() {
 
         composable("login") { Login(navController) }
         composable("register") { Register(navController) }
-        composable("dashboard") { dashboard(navController) }
+        composable("dashboard") { Dashboard(navController) }
         composable("Addstudent") { AddStudent(navController) }
     }
 }

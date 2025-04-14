@@ -22,6 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.arsenal.R
 import com.example.arsenal.ui.theme.ARSENALTheme
 
@@ -51,7 +52,7 @@ fun Register(navController: NavController) {
             contentDescription = "App Logo",
             modifier = Modifier
                 .size(120.dp)
-                .clip(CircleShape) // Rounded image
+                .clip(CircleShape)
         )
 
         Text(
@@ -67,7 +68,8 @@ fun Register(navController: NavController) {
             value = username,
             onValueChange = {
                 username = it
-                errorMessage = if (username.length < 5) "Username must be at least 5 characters long" else ""
+                errorMessage =
+                    if (username.length < 5) "Username must be at least 5 characters long" else ""
             },
             label = { Text("Username", color = secondaryColor) },
             leadingIcon = {
@@ -86,7 +88,9 @@ fun Register(navController: NavController) {
             value = email,
             onValueChange = {
                 email = it
-                errorMessage = if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) "Invalid email address" else ""
+                errorMessage =
+                    if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches())
+                        "Invalid email address" else ""
             },
             label = { Text("Email", color = secondaryColor) },
             leadingIcon = {
@@ -105,7 +109,8 @@ fun Register(navController: NavController) {
             value = password,
             onValueChange = {
                 password = it
-                errorMessage = if (password.length < 8) "Password must be at least 8 characters long" else ""
+                errorMessage =
+                    if (password.length < 8) "Password must be at least 8 characters long" else ""
             },
             label = { Text("Password", color = secondaryColor) },
             leadingIcon = {
@@ -125,7 +130,8 @@ fun Register(navController: NavController) {
             value = confirmPassword,
             onValueChange = {
                 confirmPassword = it
-                errorMessage = if (confirmPassword != password) "Passwords do not match" else ""
+                errorMessage =
+                    if (confirmPassword != password) "Passwords do not match" else ""
             },
             label = { Text("Confirm Password", color = secondaryColor) },
             leadingIcon = {
@@ -155,8 +161,8 @@ fun Register(navController: NavController) {
                     android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() &&
                     password.length >= 8 && confirmPassword == password
                 ) {
-                    // Simulate backend interaction (replace with actual logic)
                     errorMessage = ""
+                    // Backend logic simulation
                 } else {
                     errorMessage = "Please fill all fields correctly"
                 }
@@ -191,6 +197,7 @@ fun Register(navController: NavController) {
 @Composable
 fun RegisterPreview() {
     ARSENALTheme {
-       // Register()
+        val mockNavController = rememberNavController()
+        Register(navController = mockNavController)
     }
 }

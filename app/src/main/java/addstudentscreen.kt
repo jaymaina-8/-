@@ -15,9 +15,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun AddStudent() {
+fun AddStudent(navController: NavController) {
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -200,6 +202,7 @@ fun DropdownMenuField(
 @Composable
 fun AddStudentPreview() {
     MaterialTheme {
-        AddStudent()
+        val mocknavController = rememberNavController()
+       AddStudent(navController = mocknavController)
     }
 }
