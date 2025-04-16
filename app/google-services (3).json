@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "391896019284",
+    "project_id": "arsenal19-8",
+    "storage_bucket": "arsenal19-8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391896019284:android:590af8ead5542b7c39d8c1",
+        "android_client_info": {
+          "package_name": "com.example.ARSENAL8"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkvg3S48WtrzTimP3tQEUh8IoDx3OPRkg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

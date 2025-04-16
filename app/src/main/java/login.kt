@@ -1,4 +1,4 @@
-package com.example.arsenal
+package com.example.ARSENAL8
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -23,6 +23,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -33,8 +34,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+
+import com.example.ARSENAL8.ui.theme.ARSENALTheme
 import com.example.arsenal.R
-import com.example.arsenal.ui.theme.ARSENALTheme
 
 @Composable
 fun Login(navController: NavController) {
@@ -57,10 +59,10 @@ fun Login(navController: NavController) {
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         Image(
-            painter = painterResource(id = R.drawable.jay),
+            painter = painterResource(id = R.drawable.index),
             contentDescription = "App Logo",
             modifier = Modifier.size(120.dp)
-
+                .clip(RoundedCornerShape(4000.dp)),
         )
 
         Text(
@@ -130,7 +132,7 @@ fun Login(navController: NavController) {
             }
         }
 
-        TextButton(onClick = { /* Navigate to registration page */ }) {
+        TextButton(onClick = { navController.navigate("Register") }) {
             Text(
                 text = "Don't have an account? Register here",
                 color = secondaryBlue,

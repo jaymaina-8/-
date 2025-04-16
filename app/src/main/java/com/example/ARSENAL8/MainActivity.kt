@@ -1,6 +1,4 @@
-package com.example.arsenal
-
-import Register
+package com.example.ARSENAL8
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.arsenal.ui.theme.ARSENALTheme
+import com.example.ARSENAL8.ui.theme.ARSENALTheme
 import navigation.AppNavigation
 
 

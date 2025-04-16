@@ -1,4 +1,4 @@
-package com.example.arsenal
+package com.example.ARSENAL8
 
 import org.junit.Test
 

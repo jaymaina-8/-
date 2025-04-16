@@ -1,6 +1,7 @@
-package com.example.arsenal
+package com.example.ARSENAL8
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -32,7 +33,7 @@ fun TopBar(title: String) {
 fun BottomNav(navController: NavController) {
     val items = listOf(
         NavItem("dashboard", "Dashboard", Icons.Default.Home),
-        NavItem("addstudent", "ADD Student", Icons.Default.Home)
+        NavItem("addstudent", "ADD Student", Icons.Default.Add)
     )
 
     NavigationBar(
@@ -42,7 +43,8 @@ fun BottomNav(navController: NavController) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
 
-        items.forEach { item ->
+        items.forEach {
+            item ->
             NavigationBarItem(
                 icon = { Icon(item.icon, contentDescription = item.label) },
                 label = { Text(item.label) },
@@ -61,4 +63,7 @@ fun BottomNav(navController: NavController) {
     }
 }
 
-data class NavItem(val route: String, val label: String, val icon: ImageVector)
+data class NavItem(
+    val route: String,
+    val label: String,
+    val icon: ImageVector)

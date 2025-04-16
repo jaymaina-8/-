@@ -4,18 +4,17 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.arsenal.BottomNav
-import com.example.arsenal.TopBar
-import com.example.arsenal.ui.theme.ARSENALTheme
+import com.example.ARSENAL8.BottomNav
+import com.example.ARSENAL8.TopBar
+import com.example.ARSENAL8.ui.theme.ARSENALTheme
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun HomeScreen(navController: NavController) { // Added NavController as a parameter
+fun HomeScreen(navController: NavController) {
     Scaffold(
         topBar = { TopBar("HOME SCREEN") },
         bottomBar = { BottomNav(navController) }
@@ -38,7 +37,7 @@ fun HomeScreen(navController: NavController) { // Added NavController as a param
 @Composable
 fun HomeScreenPreview() {
     ARSENALTheme {
-        val navController = rememberNavController() // Added navController for the preview
+        val navController = rememberNavController()
         HomeScreen(navController = navController)
     }
 }

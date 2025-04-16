@@ -1,10 +1,11 @@
-package com.example.arsenal
+package com.example.ARSENAL8
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material3.*
@@ -169,7 +170,7 @@ fun DropdownMenuField(
         label = { Text(label, color = Color.Black) },
         trailingIcon = {
             Icon(
-                imageVector = Icons.Filled.Person,
+                imageVector = Icons.Filled.ArrowDropDown,
                 contentDescription = null,
                 modifier = Modifier.clickable { expanded = !expanded },
                 tint = Color.Black

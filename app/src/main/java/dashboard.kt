@@ -1,4 +1,4 @@
-package com.example.arsenal
+package com.example.ARSENAL8
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -19,20 +19,26 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.arsenal.ui.theme.ARSENALTheme
+import com.example.ARSENAL8.ui.theme.ARSENALTheme
 
 @Composable
 fun Dashboard(navController: NavController) {
     Scaffold(
-        topBar = { TopBar("DASHBOARD") }
-    ) { innerPadding ->
+        topBar = { TopBar("HOME SCREEN") },
+        bottomBar = { BottomNav(navController) }
+    
+    )
+
+    { innerPadding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .background(MaterialTheme.colorScheme.background)
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
+        )
+
+        {
             Text(
                 text = "School System Dashboard",
                 style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold),
@@ -44,16 +50,17 @@ fun Dashboard(navController: NavController) {
                 icon = Icons.Default.Person,
                 backgroundColor = Color(0xFF64B5F6),
                 onClick = {
-                    println("Students card clicked")
+
+                    navController.navigate("Addstudent")
+
                 }
             )
             DashboardCard(
                 title = "Exams",
                 description = "View and manage exams",
-                icon = Icons.Default.Person, // Replace with appropriate icon
+                icon = Icons.Default.Person,
                 backgroundColor = Color(0xFF81C784),
                 onClick = {
-                    navController.navigate("Addstudent")
                 }
             )
             DashboardCard(

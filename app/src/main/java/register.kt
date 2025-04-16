@@ -21,18 +21,33 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+
+import com.example.ARSENAL8.ui.theme.ARSENALTheme
 import com.example.arsenal.R
-import com.example.arsenal.ui.theme.ARSENALTheme
+import com.example.ARSENAL8.viewModel.AuthviewModel
 
 @Composable
-fun Register(navController: NavController) {
+fun Register(
+    navController: NavController,
+    viewModel: AuthviewModel = viewModel()
+) {
     var username by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var confirmPassword by remember { mutableStateOf("") }
     var errorMessage by remember { mutableStateOf("") }
+    val isRegistered=viewModel.isRegistered
+
+    LaunchedEffect(isRegistered) {
+        if (isRegistered == true) {
+            navController.navigate("Dashboard") {
+                popUpTo("register") { inclusive = true }
+            }
+        }
+    }
 
     val primaryColor = Color.Black
     val secondaryColor = Color.Black
@@ -162,7 +177,7 @@ fun Register(navController: NavController) {
                     password.length >= 8 && confirmPassword == password
                 ) {
                     errorMessage = ""
-                    // Backend logic simulation
+                    viewModel.register(email, password) // Call the register function in ViewModel
                 } else {
                     errorMessage = "Please fill all fields correctly"
                 }
@@ -198,6 +213,6 @@ fun Register(navController: NavController) {
 fun RegisterPreview() {
     ARSENALTheme {
         val mockNavController = rememberNavController()
-        Register(navController = mockNavController)
+        Register(navController = mockNavController, viewModel = viewModel())
     }
 }

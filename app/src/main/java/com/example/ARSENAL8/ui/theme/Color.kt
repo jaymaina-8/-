@@ -1,4 +1,4 @@
-package com.example.arsenal.ui.theme
+package com.example.ARSENAL8.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
