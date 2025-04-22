@@ -6,7 +6,7 @@ import java.util.Calendar.getInstance
 
 
 class AuthRepository {
-    private var auth:FirebaseAuth= getInstance()
+    private var auth:FirebaseAuth= FirebaseAuth. getInstance()
 
     fun register(email: String,password: String,
                  onResult: (Boolean)-> Unit){

@@ -177,7 +177,7 @@ fun Register(
                     password.length >= 8 && confirmPassword == password
                 ) {
                     errorMessage = ""
-                    viewModel.register(email, password) // Call the register function in ViewModel
+                    viewModel.register(email, password)
                 } else {
                     errorMessage = "Please fill all fields correctly"
                 }

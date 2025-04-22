@@ -112,8 +112,7 @@ fun Login(navController: NavController) {
                 onClick = {navController.navigate("dashboard")
                     if (email.isNotBlank() && password.isNotBlank() && isValidEmail(email)) {
                         isLoading = true
-                        // Simulate backend login process
-                        // Add your actual logic here
+
                         isLoading = false
                     } else {
                         errorMessage = "Please enter valid credentials"
